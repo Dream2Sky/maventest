@@ -8,5 +8,6 @@
 </head>
 <body>
 admin
+<a href="/maventest/account/logout.action">logout</a>
 </body>
 </html>

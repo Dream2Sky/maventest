@@ -23,6 +23,9 @@ public class AccountAction extends ActionSupport implements ModelDriven<User>, A
 	}
 
 	public String Login() {
+		System.out.println("roles:"+user.getRole());
+		System.out.println("username:"+user.getUsername());
+		System.out.println("password:"+user.getPassword());
 		if ((user.getRole() == USERROLES.ADMIN.getIndex() && user.getUsername().equals("admin")
 				&& user.getPassword().equals("hehe"))
 				|| user.getRole() == USERROLES.STAFF.getIndex() && user.getUsername().equals("user")
@@ -31,7 +34,6 @@ public class AccountAction extends ActionSupport implements ModelDriven<User>, A
 			return user.getRole() == USERROLES.ADMIN.getIndex() ? "adminLogin" : "staffLogin";
 		} else
 			return ERROR;
-
 	}
 
 	public String Logout() {

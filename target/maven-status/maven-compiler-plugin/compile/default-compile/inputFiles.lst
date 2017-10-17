@@ -1,3 +1,6 @@
-/home/petrel/eclipse-workspace/maventest/src/main/java/com/dream2sky/test/web/models/USERROLES.java
-/home/petrel/eclipse-workspace/maventest/src/main/java/com/dream2sky/test/web/models/User.java
-/home/petrel/eclipse-workspace/maventest/src/main/java/com/dream2sky/test/web/actions/AccountAction.java
+D:\eclipse-workspace\maventest\src\main\java\com\dream2sky\test\web\actions\AdminAction.java
+D:\eclipse-workspace\maventest\src\main\java\com\dream2sky\test\web\interceptors\IsLoginInterceptor.java
+D:\eclipse-workspace\maventest\src\main\java\com\dream2sky\test\web\actions\StaffAction.java
+D:\eclipse-workspace\maventest\src\main\java\com\dream2sky\test\web\models\USERROLES.java
+D:\eclipse-workspace\maventest\src\main\java\com\dream2sky\test\web\actions\AccountAction.java
+D:\eclipse-workspace\maventest\src\main\java\com\dream2sky\test\web\models\User.java

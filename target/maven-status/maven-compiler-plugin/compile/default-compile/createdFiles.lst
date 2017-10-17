@@ -1,3 +1,6 @@
-com/dream2sky/test/web/actions/AccountAction.class
-com/dream2sky/test/web/models/USERROLES.class
-com/dream2sky/test/web/models/User.class
+com\dream2sky\test\web\actions\StaffAction.class
+com\dream2sky\test\web\interceptors\IsLoginInterceptor.class
+com\dream2sky\test\web\models\User.class
+com\dream2sky\test\web\models\USERROLES.class
+com\dream2sky\test\web\actions\AccountAction.class
+com\dream2sky\test\web\actions\AdminAction.class

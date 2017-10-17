@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<include file="struts.xml"></include>
+
+	<package name="staffPackage" namespace="/staff" extends="basePackage">
+		<default-action-ref name="default"></default-action-ref>
+		<global-results>
+			<result name="login">
+				/WEB-INF/account/login.jsp
+			</result>
+		</global-results>
+		<action name="index" method="index"
+			class="com.dream2sky.test.web.actions.StaffAction">
+			<interceptor-ref name="baseInterceptor"></interceptor-ref>
+			<result name="success">/WEB-INF/staff/index.jsp</result>
+		</action>
+		<action name="default">
+			<interceptor-ref name="baseInterceptor"></interceptor-ref>
+			<result>/WEB-INF/staff/index.jsp</result>
+		</action>
+	</package>
+
+</struts>

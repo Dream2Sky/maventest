@@ -2,17 +2,48 @@
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
-        
-        <struts>
-        	<package name="accountPackage" namespace="/account" extends="struts-default">
-        	
-        		<action name="login" method="Login" class="com.dream2sky.test.web.actions.AccountAction">
-        			<result name="adminLogin" type="redirectAction">
-        				/WEB-INF/admin/index.jsp
-        			</result>
-        			<result name="staffLogin" type="redirectAction">
-        				/WEB-INF/staff/index.jsp
-        			</result>
-        		</action>
-        	</package>
-        </struts>
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.convention.result.path" value="/WEB-INF/" />
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="defaultpage"></default-action-ref>
+		<action name="defaultpage">
+			<result>/WEB-INF/account/login.jsp</result>
+		</action>
+	</package>
+
+	<package name="basePackage" namespace="/account" extends="struts-default">
+		<interceptors>
+			<interceptor name="isLoginInterceptor"
+				class="com.dream2sky.test.web.interceptors.IsLoginInterceptor">
+			</interceptor>
+			<interceptor-stack name="baseInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="isLoginInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-action-ref name="defaultpage"></default-action-ref>
+		<global-results>
+			<result name="login" type="redirectAction">
+				<param name="namespace">/account</param>
+				<param name="action">login</param>
+			</result>
+		</global-results>
+		<action name="login" method="Login"
+			class="com.dream2sky.test.web.actions.AccountAction">
+			<result name="adminLogin">
+				/WEB-INF/admin/index.jsp
+			</result>
+			<result name="staffLogin">
+				/WEB-INF/staff/index.jsp
+			</result>
+			<result name="error">
+				/WEB-INF/error.jsp
+			</result>
+		</action>
+		<action name="defaultpage">
+			<result>/WEB-INF/account/login.jsp</result>
+		</action>
+	</package>
+</struts>

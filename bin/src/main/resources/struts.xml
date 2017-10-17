@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+        
+        <struts>
+        	<package name="accountPackage" namespace="/account" extends="struts-default">
+        	
+        		<action name="login" method="Login" class="com.dream2sky.test.web.actions.AccountAction">
+        			<result name="adminLogin" type="redirectAction">
+        				/WEB-INF/admin/index.jsp
+        			</result>
+        			<result name="staffLogin" type="redirectAction">
+        				/WEB-INF/staff/index.jsp
+        			</result>
+        		</action>
+        	</package>
+        </struts>

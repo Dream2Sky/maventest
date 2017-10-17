@@ -7,6 +7,6 @@
 <title>staff</title>
 </head>
 <body>
-	staff
+	staff<a href="/maventest/account/logout.action">logout</a>
 </body>
 </html>
