@@ -4,8 +4,13 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+	<include file="struts-admin.xml"></include>
+	<include file="struts-staff.xml"></include>
+
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.convention.result.path" value="/WEB-INF/" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+
 	<package name="default" namespace="/" extends="struts-default">
 		<default-action-ref name="defaultpage"></default-action-ref>
 		<action name="defaultpage">
@@ -24,7 +29,7 @@
 			</interceptor-stack>
 		</interceptors>
 		<default-action-ref name="defaultpage"></default-action-ref>
-		<action name="login" method="Login"
+		<!-- <action name="login" method="Login"
 			class="com.dream2sky.test.web.actions.AccountAction">
 			<result name="adminLogin">
 				/WEB-INF/admin/index.jsp
@@ -35,7 +40,11 @@
 			<result name="error">
 				/WEB-INF/error.jsp
 			</result>
-		</action>
+		</action> 
+		<action name="logout" method="Logout"
+			class="com.dream2sky.test.web.actions.AccountAction">
+			<result name="success">/WEB-INF/account/login.jsp</result>
+		</action>-->
 		<action name="defaultpage">
 			<result>/WEB-INF/account/login.jsp</result>
 		</action>

@@ -4,8 +4,6 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-	<include file="struts.xml"></include>
-
 	<package name="staffPackage" namespace="/staff" extends="basePackage">
 		<default-action-ref name="default"></default-action-ref>
 		<global-results>
@@ -13,11 +11,11 @@
 				/WEB-INF/account/login.jsp
 			</result>
 		</global-results>
-		<action name="index" method="index"
+		<!-- <action name="index" method="index"
 			class="com.dream2sky.test.web.actions.StaffAction">
 			<interceptor-ref name="baseInterceptor"></interceptor-ref>
 			<result name="success">/WEB-INF/staff/index.jsp</result>
-		</action>
+		</action> -->
 		<action name="default">
 			<interceptor-ref name="baseInterceptor"></interceptor-ref>
 			<result>/WEB-INF/staff/index.jsp</result>

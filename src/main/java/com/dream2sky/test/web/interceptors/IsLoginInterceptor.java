@@ -12,7 +12,9 @@ public class IsLoginInterceptor extends AbstractInterceptor {
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
 		System.out.println(invocation.getAction().toString());
-		if (invocation.getInvocationContext().getSession().get("currentUserInfo") != null) {
+		ActionContext context = invocation.getInvocationContext();
+		Map<String, Object> session = context.getSession();
+		if (session.get("currentUserInfo") != null) {
 			System.out.println("session is not null");
 			return invocation.invoke();
 		} else {
