@@ -30,7 +30,7 @@
 		</interceptors>
 		<default-action-ref name="defaultpage"></default-action-ref>
 		<!-- <action name="login" method="Login"
-			class="com.dream2sky.test.web.actions.AccountAction">
+			class="AccountAction">
 			<result name="adminLogin">
 				/WEB-INF/admin/index.jsp
 			</result>
@@ -42,9 +42,9 @@
 			</result>
 		</action> 
 		<action name="logout" method="Logout"
-			class="com.dream2sky.test.web.actions.AccountAction">
+			class="AccountAction">
 			<result name="success">/WEB-INF/account/login.jsp</result>
-		</action>-->
+		</action> -->
 		<action name="defaultpage">
 			<result>/WEB-INF/account/login.jsp</result>
 		</action>
